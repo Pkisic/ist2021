@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-
+<!DOCTYPE root-element SYSTEM "proizvodi.dtd">
 <VebProdavnica>
-  
   <Proizvod>
     <Kategorija>Laptop</Kategorija>
     <Cena valuta="RSD">138878</Cena>
@@ -33,5 +32,4 @@
     <Oznaka>LG/UltraWide 29"/UWHD 2560 x 1080</Oznaka>
     <Akcija cena="29999" datumIsteka="2021-01-7">10%</Akcija>
   </Proizvod>
-  
 </VebProdavnica>
