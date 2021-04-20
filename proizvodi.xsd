@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="VebProdavnica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Proizvod" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="Kategorija"/>
+              <xs:element name="Cena">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:int">
+                      <xs:attribute type="xs:string" name="valuta" use="optional"/>
+                    </xs:extension>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="TekstOglasa">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="10"/>
+						<xs:maxLength value="180"/>
+					</xs:restriction>
+				</xs:simpleType>
+				</xs:element>
+              <xs:element type="xs:string" name="Oznaka" minOccurs="1" maxOccurs="5"/>
+              <xs:element name="Akcija">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:int" name="cena" use="optional"/>
+                      <xs:attribute type="xs:string" name="datumIsteka" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
